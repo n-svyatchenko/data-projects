@@ -1,4 +1,4 @@
-# Вопросы
+# Вопросы SQL
 
 ## 1. Какой оператор SQL используется для возвращения только разных значений?
 ```
@@ -10,22 +10,27 @@ SELECT DISTINCT
 SELECT id, date, brand FROM orders WHERE brand = Nike
 ```
 
-
 Необходимо добавить одинарные ковычки.
 
 ```
 SELECT id, date, brand FROM orders WHERE brand = 'Nike'
 ```
 
-## 3. Дана таблица users со столбцами name, age, city. С помощью какого запроса можно получить список имен пользователей без повторений?  SELECT DISTINCT name FROM TABLE ili SELECT name FROM table GROUP BY name
+## 3. Дана таблица users со столбцами name, age, city. С помощью какого запроса можно получить список имен пользователей без повторений?  
+
+```
+SELECT DISTINCT name FROM TABLE ili SELECT name FROM table GROUP BY name
+```
 
 ## 4. Напишите запрос, возвращающий имена, фамилии и даты рождения сотрудников. Условие: в фамилии содержится сочетание «se».
 
 ```
-SELECT FirstName, LastName, BirthDate from Employees WHERE LastName like “%se%” 
+SELECT FirstName, LastName, BirthDate from Employees WHERE LastName like "%se%" 
 ```
 
 ## 5. Дана таблица БД "Товары". Для бытовой техники необходимо выяснить среднюю цену (назвать «Средняя_цена») и какое количество её на складе (Назвать «На_складе»). 
+
+![img1](https://github.com/n-svyatchenko/data-projects/blob/main/test/img/sql_1.png)
 
 ```
 SELECT 
@@ -36,6 +41,7 @@ where "Тип" = 'Бытовая Техника'
 ```
 
 ## 6.  Дана таблица customers со столбцами name, email. Необходимо вывести дубли столбца email.
+
 
 ```
 SELECT
@@ -57,6 +63,8 @@ SELECT id, name, email FROM users)
 
 ## 8. Дана таблица products со столбцами ProductId, ProductName, CategoryId, Price. Необходимо с помощью оконной функции для каждой CategoryId найти сумму, среднее, минимальное и максимальное значение (Добавить значения к строкам таблицы)
 
+![img2](https://github.com/n-svyatchenko/data-projects/blob/main/test/img/sql_2.png)
+
 ```
 SELECT
 SUM(Price) OVER (PARTITION BY CategoryId) as category_sum,
@@ -68,6 +76,7 @@ FROM Products
 
 ## 9. Дана таблица products со столбцами ProductId, ProductName, CategoryId, Price. Необходимо с помощью подзапроса вывести ProductName, стоимость которых в среднем меньше, че стоимость монитора.
 
+![img3](https://github.com/n-svyatchenko/data-projects/blob/main/test/img/sql_2.png)
 
 ```
 SELECT 
@@ -82,4 +91,5 @@ HAVING  AVG(Price) > (SELECT price FROM Products where ProductName = 'Монит
 ```
 SELECT * FROM user FULL JOIN customers
 ```
+
 

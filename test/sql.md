@@ -19,7 +19,8 @@ SELECT id, date, brand FROM orders WHERE brand = 'Nike'
 ## 3. Дана таблица users со столбцами name, age, city. С помощью какого запроса можно получить список имен пользователей без повторений?  
 
 ```
-SELECT DISTINCT name FROM TABLE ili SELECT name FROM table GROUP BY name
+SELECT DISTINCT name FROM TABLE 
+SELECT name FROM table GROUP BY name
 ```
 
 ## 4. Напишите запрос, возвращающий имена, фамилии и даты рождения сотрудников. Условие: в фамилии содержится сочетание «se».

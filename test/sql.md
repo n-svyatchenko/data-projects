@@ -10,7 +10,7 @@ SELECT DISTINCT
 SELECT id, date, brand FROM orders WHERE brand = Nike
 ```
 
-Необходимо добавить одинарные ковычки.
+Необходимо добавить одинарные кавычки.
 
 ```
 SELECT id, date, brand FROM orders WHERE brand = 'Nike'
